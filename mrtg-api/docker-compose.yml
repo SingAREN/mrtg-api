@@ -1,0 +1,10 @@
+services:
+  mrtg-api:
+    image: mrtg-api
+    container_name: mrtg-api
+    restart: always
+    volumes:
+      - /opt/mrtg-api/mrtg-api/mrtg_api.py:/app/mrtg_api.py:ro
+      - /opt/mrtg/:/opt/mrtg/:ro
+    ports:
+      - 127.0.0.1:8081:8081/tcp

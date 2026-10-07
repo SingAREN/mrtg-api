@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, shrink-to-fit=no, user-scalable=yes">
+<title>SingAREN :: Members' Statistics &ndash; Network Usage</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/static/css/plugins.css">
+<link rel="stylesheet" type="text/css" href="/static/css/cd-timeliner.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<!--[if (gte IE 6)&(lte IE 8)]>
+	<script src="/static/js/selectivizr.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="/static/js/html5shiv.min.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+	<script src="/static/js/IE9.js"></script>
+<![endif]-->
+</head>
+
+<body class="">
+	<div id="wrapper">
+    	<header id="pageHeaderWrapper">
+            <div id="pageHeader">
+				<div class="header-container clearfix">
+					<div class="logo">
+						<a href="index.html" title="SingAREN"><img src="/static/images/SingAREN-Logo.png" alt="SingAREN"></a>
+					</div>
+					<div class="topRightContainer">
+						<div class="nav-wrapper clearfix">
+							<div class="nav-container">
+								<nav class="nav">
+									<ul class="main-menu">
+										<li><a href="index.html"><span>Home</span></a></li>
+										<li><a href="about.html"><span>About Us</span></a>
+											<ul class="">
+												<li><a href="our-journey.html"><span>Our Journey</span></a></li>
+												<li><a href="governance.html"><span>Governance</span></a></li>
+												<li><a href="membership.html"><span>Membership</span></a></li>
+												<li><a href="form-and-policies.html"><span>Form &amp; Policies</span></a></li>
+												<li><a href="careers.html"><span>Careers</span></a></li>
+											</ul>
+										</li>
+										<li><a href="singaren-open-exchange.html"><span>Network &amp; Services</span></a>
+											<ul class="">
+												<li><a href="singaren-open-exchange.html"><span>SingAREN Open Exchange</span></a></li>
+												<li><a href="eduroam.html"><span>eduroam</span></a></li>
+												<li><a href="filesender-sg.html"><span>FileSender SG</span></a></li>
+												<li><a href="database-mirroring.html"><span>Database Mirroring</span></a></li>
+												<li><a href="singapore-access-federation.html"><span>Singapore Access Federation (SGAF)</span></a></li>
+												<li><a href="edugain.html"><span>eduGain</span></a></li>
+											</ul>
+										</li>
+										<li><a href="news-and-events.html"><span>Media Centre</span></a>
+											<ul class="">
+												<li><a href="news-and-events.html"><span>News &amp; Events</span></a></li>
+												<li><a href="newsletter.html"><span>Newsletter</span></a></li>
+												<li><a href="photo-gallery.html"><span>Photo Gallary</span></a></li>
+											</ul>
+										</li>
+										<li><a href="case-studies.html"><span>Case Studies</span></a></li>
+										<li class="selected"><a href="members-statistics.html"><span>Members' Statistics</span></a>
+											<ul class="">
+												<li class="selected"><a href="network-usage.html"><span>Network Usage</span></a></li>
+												<li><a href="eduroam-usage.html"><span>eduroam Usage</span></a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html"><span>Contact Us</span></a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+    	</header>
+    	<div class="clear"></div>
+
+		<div class="bannerWrapper">
+			<div class="inner-banner"><figure><img src="/static/images/members-statistics-banner.jpg" alt="Members' Statistics"></figure></div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="innerMenu-container">
+			<ul class="">
+				<li class="selected"><a href="network-usage.html"><span>Network Usage</span></a></li>
+				<li><a href="eduroam-usage.html"><span>eduroam Usage</span></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+
+		<div class="main-container">
+			<div class="container clearfix">
+				<div class="breadcrumb-container">
+					<ul class="">
+						<li class="home"><a href="index.html">Home</a></li>
+						<li>Members' Statistics</li>
+					</ul>
+				</div>
+				<div class="pageTitle"><h1><span>Members'</span> Statistics</h1></div>
+				<div class="search-container clearfix">
+                    <div class="search-result-counter">
+						<h3><span>Network Utilization Graph</span></h3>
+					</div>
+                	<div class="search-group">
+						<form action="javascript:void(0);" method="get">
+							<div class="input-group">
+								<div class="filter-select">
+									<select class="">
+										<option value="INTERNET2 100G US" selected>INTERNET2 100G US</option>
+									</select>
+								</div>
+								<button class="search-btn" type="submit">Filter</button>
+							</div>
+						</form>
+                   	</div>
+                </div>
+                <div class="clear"></div>
+
+				<h3>{{ title }}</h3>
+				<p>The statistics were last updated <strong>{{ last_update }}</strong></p>
+				<div class="nug-container">
+					<h5><span>'Daily' Graph (5 Minute Average)</span></h5>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="graph-img"><img src="{{ day.img }}" alt=""></div>
+						</div>
+						<div class="col-lg-6">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered text-center">
+									<thead class="thead-dark">
+										<tr>
+											<th class="nobg"></th>
+											<th>Max</th>
+											<th>Average</th>
+											<th>Current</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>In</strong></td>
+											<td>{{ day.in.max }}</td>
+											<td>{{ day.in.average }}</td>
+											<td>{{ day.in.current }}</td>
+										</tr>
+										<tr>
+											<td><strong>Out</strong></td>
+											<td>{{ day.out.max }}</td>
+											<td>{{ day.out.average }}</td>
+											<td>{{ day.out.current }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nug-container">
+					<h5><span>'Weekly' Graph (30 Minute Average)</span></h5>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="graph-img"><img src="{{ week.img }}" alt=""></div>
+						</div>
+						<div class="col-lg-6">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered text-center">
+									<thead class="thead-dark">
+										<tr>
+											<th class="nobg"></th>
+											<th>Max</th>
+											<th>Average</th>
+											<th>Current</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>In</strong></td>
+											<td>{{ week.in.max }}</td>
+											<td>{{ week.in.average }}</td>
+											<td>{{ week.in.current }}</td>
+										</tr>
+										<tr>
+											<td><strong>Out</strong></td>
+											<td>{{ week.out.max }}</td>
+											<td>{{ week.out.average }}</td>
+											<td>{{ week.out.current }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nug-container">
+					<h5><span>'Monthly' Graph (2 Hour Average)</span></h5>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="graph-img"><img src="{{ month.img }}" alt=""></div>
+						</div>
+						<div class="col-lg-6">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered text-center">
+									<thead class="thead-dark">
+										<tr>
+											<th class="nobg"></th>
+											<th>Max</th>
+											<th>Average</th>
+											<th>Current</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>In</strong></td>
+											<td>{{ month.in.max }}</td>
+											<td>{{ month.in.average }}</td>
+											<td>{{ month.in.current }}</td>
+										</tr>
+										<tr>
+											<td><strong>Out</strong></td>
+											<td>{{ month.out.max }}</td>
+											<td>{{ month.out.average }}</td>
+											<td>{{ month.out.current }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nug-container">
+					<h5><span>'Yearly' Graph (1 Day Average)</span></h5>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="graph-img"><img src="{{ year.img }}" alt=""></div>
+						</div>
+						<div class="col-lg-6">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered text-center">
+									<thead class="thead-dark">
+										<tr>
+											<th class="nobg"></th>
+											<th>Max</th>
+											<th>Average</th>
+											<th>Current</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>In</strong></td>
+											<td>{{ year.in.max }}</td>
+											<td>{{ year.in.average }}</td>
+											<td>{{ year.in.current }}</td>
+										</tr>
+										<tr>
+											<td><strong>Out</strong></td>
+											<td>{{ year.out.max }}</td>
+											<td>{{ year.out.average }}</td>
+											<td>{{ year.out.current }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="graphStyle"><span class="green">GREEN ###</span> Incoming Traffic in Bits per Second</div>
+				<div class="graphStyle"><span class="blue">BLUE ###</span> Outgoing Traffic in Bits per Second</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="CTAContainer">
+			<div class="container clearfix">
+				<ul class="social-nav">
+					<li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+					<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+				</ul>
+				<div class="CTAContent">
+					<div class="row">
+						<div class="col-lg-8">
+							<h4>Get in touch with us to find out more about our network and services.</h4>
+						</div>
+						<div class="col-lg-4">
+							<div class="link-btn"><a href="javascript:void(0);">Contact Us</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="clear"></div>
+
+    	<div class="pushContainer"></div>
+    	<div class="clear"></div>
+    </div>
+
+	<!-- Footer -->
+    <footer class="footer-wrapper">
+		<div class="footer-top">
+			<div class="footer container">
+				<div class="row">
+					<div class="ftcol ftcol1">
+						<div class="foot-head">Sitemap</div>
+						<ul class="foot-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="singaren-open-exchange.html">Network &amp; Services</a></li>
+							<li><a href="news-and-events.html">Media Centre</a></li>
+							<li><a href="case-studies.html">Case Studies</a></li>
+							<li class="selected"><a href="members-statistics.html">Members' Statistics</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="ftcol ftcol2">
+						<div class="foot-head">Contact Information</div>
+						<div class="our-location"><i class="fa fa-map"></i> c/o A*STAR Computational Resource Centre (A*CRC)<br>
+						1 Fusionopolis Way #17-01 Connexis South Singapore 138632</div>
+						<div class="our-tel"><i class="fa fa-phone"></i> SingAREN NOC Helpdesk (24/7):<br>
+						(65) 6817 2517</div>
+					</div>
+					<div class="ftcol ftcol3">
+						<div class="copyright">Copyright &copy; <script>document.write( new Date().getFullYear() );</script> SingAREN.<br>All rights reserved</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <!-- jQuery (necessary JavaScript plugins) -->
+    <script src="/static/js/plugin.min.js"></script>
+	<script src="/static/js/main-script.js"></script>
+</body>
+</html>

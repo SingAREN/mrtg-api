@@ -1,0 +1,12 @@
+beautifulsoup4
+Click
+Flask
+Flask-Caching
+Flask-Cors
+gunicorn
+itsdangerous
+Jinja2
+lxml
+MarkupSafe
+soupsieve
+Werkzeug
