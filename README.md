@@ -62,7 +62,7 @@ mrtg-api/
 ## Requirements
 
 - Docker and Docker Compose (recommended), **or** Python 3.12 with the packages in `requirements.txt`
-- A host that runs MRTG and has its config and output directories available locally
+- **MRTG data on the same host, mounted into the container.** mrtg-api does not poll devices itself. It only reads files that MRTG has already written. Set up [mrtg-container](https://github.com/SingAREN/mrtg-container) (or any MRTG install) first. See [MRTG data mount](#mrtg-data-mount).
 - *(Optional)* An HTTP location that serves the eduroam statistics CSVs
 
 ## Configuration
@@ -110,6 +110,34 @@ The supplied `docker-compose.yml` assumes the following:
 - The inner `mrtg-api/` directory (the one that contains the `Dockerfile`) is deployed at `/opt/mrtg-api` on the host.
 - MRTG's files are under `/opt/mrtg/` on the host.
 - A reverse proxy (e.g. nginx) on the same host handles public traffic. The container only listens on `127.0.0.1:8081`.
+
+### MRTG data mount
+
+mrtg-api needs MRTG's configuration and output, mounted read-only from the host. `docker-compose.yml` already does this:
+
+```yaml
+volumes:
+  - /opt/mrtg/:/opt/mrtg/:ro
+```
+
+Before you start mrtg-api, the host must have:
+
+| Host path | Contents | Written by |
+|---|---|---|
+| `/opt/mrtg/config/mrtg.cfg` | MRTG configuration with your `Target[...]` entries | you (see mrtg-container) |
+| `/opt/mrtg/data/` | `<target>.html` and `<target>-{day,week,month,year}.png` | MRTG, every 5 minutes |
+
+[mrtg-container](https://github.com/SingAREN/mrtg-container) produces exactly this layout when it is deployed at `/opt/mrtg`. Let it run for at least one cycle before you start mrtg-api, so `data/` contains files.
+
+Check the files are there:
+
+```bash
+ls /opt/mrtg/config/mrtg.cfg /opt/mrtg/data/*.html
+```
+
+If MRTG lives elsewhere, change the host side of the volume in `docker-compose.yml`, for example `/srv/mrtg/:/opt/mrtg/:ro`. Alternatively, change `MRTG_BASE_DIR` and `MRTG_CONFIG` to match.
+
+The container user (UID 225) needs read access to both paths. If they are missing or unreadable, the API returns `404 {"error": "unable to retrieve data, file does not exist"}`.
 
 **1. Get the code**
 
